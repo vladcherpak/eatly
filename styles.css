@@ -40,7 +40,15 @@
 :root {
     --primary-text:14px;
     --primary-color:#5C4EAE;
-    --section-padding:35px 0;
+    --header-padding:35px 0;
+    --secondary-color:grey;
+    --accent-color:#201f1f;
+    --hero-title:40px;
+    --section-title:30px;
+    --text:12px;
+    --button-text:14px;
+    --section-padding: 60px 0 74px;
+  
 }
 
 @media screen and (min-width:1440px)  {
@@ -49,6 +57,7 @@
         --section-padding:125px 0;
     }
 }  
+
 
 .container{
     max-width: 1440px;
@@ -60,7 +69,7 @@
 /* починається header */
 
 .header {
-    padding: var(--section-padding);
+    padding: var(--header-padding);
 }
 
 .header__nav{
@@ -174,3 +183,63 @@
   }
 }
 
+
+/* section hero */
+.header__buttons{
+  display: none;
+}
+
+/* .hero__head .p::before{
+
+} */
+
+.hero{
+  padding: var(--section-padding);
+}
+.hero__head{
+  position: relative;
+}
+
+
+/* .hero__preview{
+  font-size:9px;
+  font-weight: 600px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+} */
+
+
+.hero__title{
+  font-size: var(--hero-title);
+  font-weight: 600px;
+  text-align: center;
+  position: relative;
+}
+
+.hero__title span{
+  color: var(--primary-color);
+}
+
+.hero__preview::after{
+  content: "--OVER 1000 USERS";
+  position: absolute;
+  top: -20px;
+  color: var(--accent-color);
+  width: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero__text{
+  font-size: var(--text);
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: var(--secondary-color);
+
+}
+
+.hero__text span{
+  color: var(--primary-color);
+}
