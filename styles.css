@@ -46,14 +46,14 @@ body {
   --header-padding: 35px 0;
   --secondary-color: grey;
   --accent-color: #201f1f;
-
+  --hero-title: 40px;
   --main-font: "Poppins", sans-serif;
   --secondary-font: "Inter", sans-serif;
 }
 
 @media screen and (min-width: 520px) {
   :root {
-    --hero-title: 40px;
+    --hero-title: 50px;
   }
 }
 
@@ -230,7 +230,7 @@ body {
 } */
 
 .hero__title {
-  font-size: var(--hero-title);
+  font-size: 40px;
   font-weight: 600px;
   text-align: center;
   position: relative;
@@ -245,7 +245,7 @@ body {
   content: "OVER 1000 USERS";
   position: absolute;
   top: -20px;
-  color: var(--accent-color);
+  color: var(--secondary-color);
   width: 120px;
   font-weight: 600;
   font-size: 9px;
