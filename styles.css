@@ -394,12 +394,14 @@ body {
 
 .customers__item{
   border-bottom: 1px solid var(--secondary-color);
-  margin-bottom:0 ;
+  padding-bottom:60px ;
+  margin-bottom: 60px;
 } 
 
 .customers__text{
   font-size: 40px;
   font-weight: 700;
+  padding-bottom: 10px;
 }
 
 .customers__description{
@@ -410,3 +412,9 @@ body {
   display: flex;
   margin: 0 auto;
 }
+
+.customers__item:nth-child(3){
+  border-bottom: none;
+  padding-bottom:0;
+  margin-bottom: 0;
+} 
