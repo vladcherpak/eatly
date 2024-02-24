@@ -217,6 +217,8 @@ body {
   margin-bottom: 50px;
 }
 
+
+
 .header__buttons {
   display: none;
 }
@@ -305,10 +307,14 @@ body {
 }
 
 .hero__trust__p::before{
-  content: url(./img/icons/star.svg);
+  content: "";
+  background-image: url(./img/icons/star.svg);
+  width: 70px;
+  background-size: cover;
+  height: 11px;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 1.7px;
 }
 
 .hero__image {
@@ -327,6 +333,7 @@ body {
 @media screen and (min-width: 991px) {
   .hero__wrapper {
     display: flex;
+    align-items: center;
   }
 
   .hero__title{
@@ -358,6 +365,14 @@ body {
   .header__buttons{
     display: flex;
     gap: 10px;
+  }
+
+  .hero__head{
+    margin: 0;
+  }
+
+  .header__nav{
+    border-bottom: 1px solid #CBCBCB;
   }
 
 }
