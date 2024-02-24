@@ -299,6 +299,18 @@ body {
   align-items: flex-end;
 }
 
+.hero__trust__p{
+  position: relative;
+  padding-left: 85px;
+}
+
+.hero__trust__p::before{
+  content: url(./img/icons/star.svg);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .hero__image {
   object-fit: contain;
   max-width: 680px;
