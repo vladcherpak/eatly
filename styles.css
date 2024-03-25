@@ -505,20 +505,7 @@ body {
   opacity: 1;
 }
 
-@keyframes customers {
-  0% {
-    opacity: 0;
-    transform: translateY(100vh);
-  }
-  50% {
-    opacity: 0.5;
-  }
- 
-  100% {
-    opacity: 1;
-    transform: translateY(0vh);
-  }
-}
+
 
 .customers__item {
   padding-bottom: 60px;
@@ -584,6 +571,7 @@ body {
 
 .quality{
   padding-top: 60px;
+  margin-bottom: 80px;
 }
 
 .quality__text{
@@ -701,7 +689,14 @@ body {
  .quality__wrapper{
   display: flex;
   justify-content: space-between;
+  animation-name:qualityAnimWrapper ;
   align-items: center;
+}
+
+.quality__btn::after{
+  transform: rotate(12deg);
+  top: 40px;
+  left: 100px;
 }
 
 }
@@ -715,4 +710,41 @@ body {
    .quality__text{
     max-width: 390px;
    }
+}
+
+.quality__animation{
+  animation-name: qualityAnim ;
+  animation-duration: 1.5s;
+  transition: opacity 0.3s linear;
+  opacity: 1;
+}
+
+@keyframes qualityAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(100vh);
+  }
+  50% {
+    opacity: 0.5;
+  }
+ 
+  100% {
+    opacity: 1;
+    transform: translateX(0vh);
+  }
+}
+
+@keyframes qualityAnimWrapper {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vh);
+  }
+  50% {
+    opacity: 0.5; 
+  }
+ 
+  100% {
+    opacity: 1;
+    transform: translateX(0vh);
+  }
 }
