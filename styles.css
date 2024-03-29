@@ -588,7 +588,7 @@ body {
 }
 
 .quality__list{
-  padding: 0 20px;
+  padding: 10px 20px;
   color: var(--secondary-color);
   font-size: var(--third-text);
   list-style:disc;
@@ -641,6 +641,8 @@ body {
 .quality__wrapper{
   display: flex;
   justify-content: center;
+
+
   
 }
 
@@ -664,6 +666,51 @@ body {
 .quality__text span {
   padding: 0 10px ;
 }
+
+.quality__inner.quality__animation .quality__wrapper{
+  animation-name:qualityAnimWrapper ;
+  animation-duration: 1.5s;
+}
+
+.quality__inner.quality__animation .quality__text{
+  animation-name: qualityAnim ;
+  animation-duration: 1.5s;
+
+}
+
+
+
+@keyframes qualityAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(100vh);
+  }
+  50% {
+    opacity: 0.5;
+  }
+ 
+  99% {
+    opacity: 1;
+    transform: translateX(0vh);
+  }
+}
+
+@keyframes qualityAnimWrapper {
+  0% {
+    opacity: 0;
+    transform: translateX(0vh);
+  }
+  50% {
+    opacity: 0; 
+    transform: translateX(-100vh);
+  }
+ 
+  100% {
+    opacity: 1;
+    transform: translateX(0vh);
+  }
+}
+
 
 
 @media screen and (min-width: 768px) {
@@ -689,7 +736,6 @@ body {
  .quality__wrapper{
   display: flex;
   justify-content: space-between;
-  animation-name:qualityAnimWrapper ;
   align-items: center;
 }
 
@@ -712,39 +758,7 @@ body {
    }
 }
 
-.quality__animation{
-  animation-name: qualityAnim ;
-  animation-duration: 1.5s;
-  transition: opacity 0.3s linear;
-  opacity: 1;
-}
-
-@keyframes qualityAnim {
-  0% {
-    opacity: 0;
-    transform: translateX(100vh);
-  }
-  50% {
-    opacity: 0.5;
-  }
  
-  100% {
-    opacity: 1;
-    transform: translateX(0vh);
-  }
-}
 
-@keyframes qualityAnimWrapper {
-  0% {
-    opacity: 0;
-    transform: translateX(-100vh);
-  }
-  50% {
-    opacity: 0.5; 
-  }
- 
-  100% {
-    opacity: 1;
-    transform: translateX(0vh);
-  }
-}
+
+
