@@ -650,7 +650,7 @@ body {
 
 .quality__text h2{
   font-family: var(--main-font);
-  font-size: 50px;
+  font-size: var(--title-font);
   
 }
 
@@ -753,6 +753,10 @@ body {
   left: 100px;
 }
 
+.quality__text h2 {
+  font-size: 36px ;
+}
+
 }
 
 
@@ -774,11 +778,22 @@ body {
    .quality__text{
     max-width: 560px;
    }
+
+   .quality__text h2 {
+    font-size: 50px;
+   }
 }
 
 
+.restaurants{
+  padding: 60px 0;
+}
 
- 
 
-
-
+.restaurants__text h2 {
+  font-family: var(--main-font);
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: var(--title-font);
+}
