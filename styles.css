@@ -52,7 +52,9 @@ body {
   --hero-title: 40px;
   --quality-title:30px;
   --main-font: "Poppins", sans-serif;
- 
+ --healthy-color-text:#DAA31A;
+ --healthy-color:  #F7EDD0;
+
   --secondary-font: "Inter", sans-serif;
 }
 
@@ -683,7 +685,8 @@ body {
 .quality__inner.quality__animation .quality__text{
   animation-name: qualityAnim ;
   animation-duration: 1.5s;
-
+  
+  
 }
 
 
@@ -796,4 +799,59 @@ body {
   justify-content: center;
   font-weight: 600;
   font-size: var(--title-font);
+}
+
+.restaurants__list{
+  padding: 25px;
+
+}
+
+.restaurants__item{
+  background-color: var(--white-color);
+  box-shadow: 4.73px 56.755px 28.377px 0 rgba(229, 229, 229, 0.7);
+  margin-bottom: 30px;
+  border-radius:20px;
+  overflow: hidden;
+}
+
+.restaurants__img{
+  max-width: 345px;
+}
+
+.restaurants__h3{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.restaurants__time{
+  cursor: var(--secondary-color);
+  list-style-type: disc;
+  align-items: center;
+}
+
+.restaurants__status{
+  color: var(--healthy-color-text);
+  background-color: var(--healthy-color);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.restaurants__reting{
+  padding-left: 28px;
+  position: relative;
+}
+
+.restaurants__reting::before{
+  position: absolute;
+  content: "";
+  background-image: url(./img/icons/healthy-star.svg);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  top: -5px;
+  left: 0;
+}
+
+.restaurants__saved{
+  margin-left: 220px;
 }

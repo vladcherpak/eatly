@@ -50,25 +50,28 @@ const restaurantsData =[
   id:1,
   imgageUrl:"./img/RestaurantImage3.jpg",
   title:"The Chicken King",
-  deliveryTime:24,
+  deliveryTime:"24min •",
   rating:4.8,
-  status:"Healthy"
+  status:"Healthy",
+  saved:"./img/healthy-saved.svg"
 },
 {
   id:2,
   imgageUrl:"./img/RestaurantImage2.jpg",
   title:"The Burger King",
-  deliveryTime:24,
+  deliveryTime:"24min •",
   rating:4.9,
-  status:"Trending"
+  status:"Trending",
+  saved:"./img/healthy-saved.svg"
 },
 {
   id:3,
   imgageUrl:"./img/RestaurantImage1.jpg",
   title:"The Chicken King",
-  deliveryTime:24,
+  deliveryTime:"24min •" ,
   rating:4.8,
-  status:"Healthy"
+  status:"Healthy",
+  saved:"./img/healthy-saved.svg"
 }
 ]
 
@@ -76,10 +79,13 @@ const createRestaurantsList = restaurantsData.map((restaurant)=>{
   return `
   <li class="restaurants__item">
   <img class="restaurants__img"  src="${restaurant.imgageUrl}" alt="image">
+  <ul class="restaurants__list">
   <span class="restaurants__status">${restaurant.status}</span>
   <h3 class="restaurants__h3">${restaurant.title}</h3>
   <span class="restaurants__time">${restaurant.deliveryTime}</span>
   <span class="restaurants__reting">${restaurant.rating}</span>
+  <img class="restaurants__saved" src="${restaurant.saved}" alt="">
+  </ul>
 </li>
 `
 })
