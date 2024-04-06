@@ -2,96 +2,158 @@ let menuBtn = document.querySelector(".menu__btn");
 let link = document.querySelector(".header__link");
 let list = document.querySelector(".header__list");
 let restaurantsList = document.querySelector(".restaurants__list");
+let dishesList = document.querySelector(".dishes__list");
 
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("active");
   list.classList.toggle("active");
 });
 
-const isElementInViewport = (el)=> {
-  const rect = el.getBoundingClientRect()
-  return(
-    rect.top >=0 &&
-    rect.left >=0 &&
-    rect.bottom <= (window.innerHeight ||document.documentElement.clientHeight ) &&
-    rect.right <= (window.innerWidth ||document.documentElement.clientWidth) 
-  )
-}
+const isElementInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
 
-
-const customersScroll = ()=> {
-  const section = document.querySelector(".customers__list")
+const customersScroll = () => {
+  const section = document.querySelector(".customers__list");
   if (isElementInViewport(section)) {
-    section.classList.add("customers__animation")
-    window.removeEventListener("scroll",customersScroll)
+    section.classList.add("customers__animation");
+    window.removeEventListener("scroll", customersScroll);
   }
+};
 
-}
+window.addEventListener("scroll", customersScroll);
+customersScroll();
 
-window.addEventListener("scroll",customersScroll)
-customersScroll()
-
-
-const qualityScroll = ()=> {
-  const section = document.querySelector(".quality__inner")
+const qualityScroll = () => {
+  const section = document.querySelector(".quality__inner");
   if (isElementInViewport(section)) {
-    section.classList.add("quality__animation")
-    window.removeEventListener("scroll",qualityScroll)
+    section.classList.add("quality__animation");
+    window.removeEventListener("scroll", qualityScroll);
   }
+};
 
-}
+window.addEventListener("scroll", qualityScroll);
+qualityScroll();
 
-window.addEventListener("scroll",qualityScroll)
-qualityScroll()
+const restaurantsData = [
+  {
+    id: 1,
+    imgageUrl: "./img/RestaurantImage3.jpg",
+    title: "The Chicken King",
+    deliveryTime: "24min •",
+    rating: 4.8,
+    status: "Healthy",
+    saved: "./img/healthy-saved.svg",
+  },
+  {
+    id: 2,
+    imgageUrl: "./img/RestaurantImage2.jpg",
+    title: "The Burger King",
+    deliveryTime: "24min •",
+    rating: 4.9,
+    status: "Trending",
+    saved: "./img/healthy-saved.svg",
+  },
+  {
+    id: 3,
+    imgageUrl: "./img/RestaurantImage1.jpg",
+    title: "The Chicken King",
+    deliveryTime: "24min •",
+    rating: 4.8,
+    status: "Healthy",
+    saved: "./img/healthy-saved.svg",
+  },
+];
 
-
-const restaurantsData =[
-{
-  id:1,
-  imgageUrl:"./img/RestaurantImage3.jpg",
-  title:"The Chicken King",
-  deliveryTime:"24min •",
-  rating:4.8,
-  status:"Healthy",
-  saved:"./img/healthy-saved.svg"
-},
-{
-  id:2,
-  imgageUrl:"./img/RestaurantImage2.jpg",
-  title:"The Burger King",
-  deliveryTime:"24min •",
-  rating:4.9,
-  status:"Trending",
-  saved:"./img/healthy-saved.svg"
-},
-{
-  id:3,
-  imgageUrl:"./img/RestaurantImage1.jpg",
-  title:"The Chicken King",
-  deliveryTime:"24min •" ,
-  rating:4.8,
-  status:"Healthy",
-  saved:"./img/healthy-saved.svg"
-}
-]
-
-const createRestaurantsList = restaurantsData.map((restaurant)=>{
-  return `
+const createRestaurantsList = restaurantsData
+  .map((restaurant) => {
+    const statusClass = restaurant.status === "Healthy" ? "healthy" : "treding";
+    return `
   <li class="restaurants__item">
   <img class="restaurants__img"  src="${restaurant.imgageUrl}" alt="image">
-  <ul class="restaurants__list">
-  <span class="restaurants__status">${restaurant.status}</span>
+  <ul class="restaurants__list_2">
+  <span class="restaurants__status ${statusClass}">${restaurant.status}</span>
   <h3 class="restaurants__h3">${restaurant.title}</h3>
+  <div class="healhty__div">
+  <div>
   <span class="restaurants__time">${restaurant.deliveryTime}</span>
   <span class="restaurants__reting">${restaurant.rating}</span>
+  </div>
   <img class="restaurants__saved" src="${restaurant.saved}" alt="">
+  </div>
   </ul>
 </li>
-`
+`;
+  })
+
+  .join("");
+restaurantsList.innerHTML = createRestaurantsList;
+
+const dishesData = [
+  {
+    id: 1,
+    imgageUrl: "./img/FoodImage1.jpg",
+    title: "Chicken Hell",
+    deliveryTime: "24min •",
+    rating: 4.8,
+    status: "Healthy",
+    price: "$12.99",
+    saved: "",
+  },
+  {
+    id: 2,
+    imgageUrl: "./img/FoodImage2.jpg",
+    title: "Swe Dish",
+    deliveryTime: "34min •",
+    rating: 4.9,
+    status: "Trending",
+    price: "$19.99",
+    saved: "",
+  },
+  {
+    id: 3,
+    imgageUrl: "./img/FoodImage3.jpg",
+    title: "Swe Dish",
+    deliveryTime: "34min •",
+    rating: 4.9,
+    status: "Supreme",
+    price: "$19.99",
+    saved: "",
+  },
+  {
+    id: 4,
+    imgageUrl: "./img/FoodImage1.jpg",
+    title: "Chicken Hell",
+    deliveryTime: "24min •",
+    rating: 4.8,
+    status: "Healthy",
+    price: "$12.99",
+    saved: "",
+  },
+];
+
+const createDishesList = dishesData.map((dish) => {
+  return `
+      <li class="dishes__item">
+      <img class="dishes__img"  src="${dish.imgageUrl}" alt="image">
+      <ul class="dishes__list_2">
+      <span class="dishes__status">${dish.status}</span>
+      <h3 class="dishes__h3">${dish.title}</h3>
+      <span class="dishes__time">${dish.deliveryTime}</span>
+      <span class="dishes__reting">${dish.rating}</span>
+      <span class="dishes__price">${dish.price}</span>
+      <img class="dishes__saved" src="${dish.saved}" alt="">
+      </ul>
+    </li>
+    `
 })
 
 .join("");
-  restaurantsList.innerHTML =createRestaurantsList;
-
-
-
+dishesList.innerHTML = createDishesList;
