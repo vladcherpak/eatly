@@ -99,6 +99,7 @@ restaurantsList.innerHTML = createRestaurantsList;
 const dishesData = [
   {
     id: 1,
+    imgageUrl2: "./img/icons/eatly-heart.svg",
     imgageUrl: "./img/FoodImage1.jpg",
     title: "Chicken Hell",
     deliveryTime: "24min •",
@@ -109,6 +110,7 @@ const dishesData = [
   },
   {
     id: 2,
+    imgageUrl2: "./img/icons/eatly-heart.svg",
     imgageUrl: "./img/FoodImage2.jpg",
     title: "Swe Dish",
     deliveryTime: "34min •",
@@ -119,6 +121,7 @@ const dishesData = [
   },
   {
     id: 3,
+    imgageUrl2: "./img/icons/eatly-heart.svg",
     imgageUrl: "./img/FoodImage3.jpg",
     title: "Swe Dish",
     deliveryTime: "34min •",
@@ -129,6 +132,7 @@ const dishesData = [
   },
   {
     id: 4,
+    imgageUrl2: "./img/icons/eatly-heart.svg",
     imgageUrl: "./img/FoodImage1.jpg",
     title: "Chicken Hell",
     deliveryTime: "24min •",
@@ -139,21 +143,29 @@ const dishesData = [
   },
 ];
 
-const createDishesList = dishesData.map((dish) => {
-  return `
+const createDishesList = dishesData
+  .map((dish) => {
+    return `
       <li class="dishes__item">
+      <button class="dishes__heart__btn">
+      <img class="dishes__img__heart"  src="${dish.imgageUrl2}" alt="image">
+      </button>
       <img class="dishes__img"  src="${dish.imgageUrl}" alt="image">
-      <ul class="dishes__list_2">
-      <span class="dishes__status">${dish.status}</span>
-      <h3 class="dishes__h3">${dish.title}</h3>
+      <div class="dishes__item__inner">
+      <span class="dishes__status ${dish.status.toLowerCase()}">${
+      dish.status
+    }</span>
+      <h3 class="dishes__title">${dish.title}</h3>
       <span class="dishes__time">${dish.deliveryTime}</span>
       <span class="dishes__reting">${dish.rating}</span>
+      <div class="price__wrapper">
       <span class="dishes__price">${dish.price}</span>
-      <img class="dishes__saved" src="${dish.saved}" alt="">
-      </ul>
+      <button class="dishes__add__btn"></button>
+      </div>
+      </div>
     </li>
-    `
-})
+    `;
+  })
 
-.join("");
+  .join("");
 dishesList.innerHTML = createDishesList;
