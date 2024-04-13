@@ -156,11 +156,13 @@ const createDishesList = dishesData
       dish.status
     }</span>
       <h3 class="dishes__title">${dish.title}</h3>
+      <div class="time__wrapper">
       <span class="dishes__time">${dish.deliveryTime}</span>
       <span class="dishes__reting">${dish.rating}</span>
+      </div>
       <div class="price__wrapper">
       <span class="dishes__price">${dish.price}</span>
-      <button class="dishes__add__btn"></button>
+      <button class="dishes__add__btn">+</button>
       </div>
       </div>
     </li>

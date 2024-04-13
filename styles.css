@@ -904,7 +904,7 @@ body {
   border-radius: 15px;
   overflow: hidden;
   position: relative;
-  padding: 30px 15px;
+  padding: 10px 15px;
 }
 
 .dishes__img {
@@ -936,8 +936,44 @@ body {
 
 .dishes__time {
   color: var(--manatee-color);
+  
 }
 
+.dishes__price{
+  font-weight: 700;
+}
 .dishes__reting {
   color: var(--manatee-color);
+  position: relative;
+  padding-left: 15px;
+}
+
+.time__wrapper{
+  padding-bottom: 15px;
+}
+
+.dishes__reting::before{
+  content: "";
+  position: absolute;
+  background-image: url(./img/icons/eatly-star.svg);
+  top: 3px;
+  left: 2px;
+  width:12px ;
+  height: 12px;
+}
+
+.dishes__add__btn{
+  background-color: #323142;
+  color: white;
+  border: none;
+  box-shadow: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.price__wrapper{
+  display: flex;
+  justify-content: space-between;
 }
