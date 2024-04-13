@@ -3,6 +3,7 @@ let link = document.querySelector(".header__link");
 let list = document.querySelector(".header__list");
 let restaurantsList = document.querySelector(".restaurants__list");
 let dishesList = document.querySelector(".dishes__list");
+let purchasesList = document.querySelector(".purchases__list");
 
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("active");
@@ -171,3 +172,52 @@ const createDishesList = dishesData
 
   .join("");
 dishesList.innerHTML = createDishesList;
+
+
+const purchasesData = [
+  {
+    id: 1,
+    imgageUrl: "./img/FoodImage1.jpg",
+    title: "Chicken Hell",
+    time:"On The Way",
+    endTime:"3:09 PM",
+    saved: "",
+  },
+  {
+    id: 2,
+    imgageUrl: "./img/FoodImage2.jpg",
+    title: "Swe Dish",
+    time:"Delivered",
+    endTime:"Yesterday",
+    saved: "",
+  },
+  {
+    id: 3,
+    imgageUrl: "./img/FoodImage3.jpg",
+    title: "Swe Dish",
+    time:"Cancelled",
+    endTime:"Yesterday",
+    saved: "",
+  },
+
+];
+
+
+const createPurchasesList =  purchasesData
+  .map((purchas) => {
+    return `
+      <li class="purchases__item">
+      <img class="purchases__img"  src="${purchas.imgageUrl}" alt="image">
+      <div class="purchases__item__inner">
+      <h3 class="purchases__title">${purchas.title}</h3>
+      <div class="purchases__wrapper">
+      <span class="purchases__time">${purchas.time}</span>
+    </div>
+    <span class="purchases__endtime">${purchas.endTime}</span>
+      </div>
+    </li>
+    `;
+  })
+
+  .join("");
+  purchasesList.innerHTML = createPurchasesList;

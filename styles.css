@@ -886,6 +886,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   justify-items: center;
+  padding-bottom: 60px;
 }
 
 .dishes__text h2 {
@@ -930,16 +931,22 @@ body {
   display: inline-block;
 }
 
+
+.dishes__text h2{
+  padding-bottom: 50px;
+}
+.dishes__text h2 span {
+  color: var(--primary-color);
+}
 .dishes__title {
   margin-bottom: 10px;
 }
 
 .dishes__time {
   color: var(--manatee-color);
-  
 }
 
-.dishes__price{
+.dishes__price {
   font-weight: 700;
 }
 .dishes__reting {
@@ -948,21 +955,21 @@ body {
   padding-left: 15px;
 }
 
-.time__wrapper{
+.time__wrapper {
   padding-bottom: 15px;
 }
 
-.dishes__reting::before{
+.dishes__reting::before {
   content: "";
   position: absolute;
   background-image: url(./img/icons/eatly-star.svg);
   top: 3px;
   left: 2px;
-  width:12px ;
+  width: 12px;
   height: 12px;
 }
 
-.dishes__add__btn{
+.dishes__add__btn {
   background-color: #323142;
   color: white;
   border: none;
@@ -973,7 +980,70 @@ body {
   font-size: 20px;
 }
 
-.price__wrapper{
+.price__wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.dishes__view {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+  color: #ACADB9;
+  font-weight: 500;
+  font-size: 20px;
+  position: relative;
+  padding-bottom: 150px;
+}
+
+.dishes__view::before{
+  content: "";
+  position: absolute;
+  background-image: url(./img/icons/dishes-view.svg);
+  top: 2px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (min-width: 650px){
+  .dishes__list{
+     grid-template-columns: repeat(3,minmax(200px, 1fr));
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .dishes__list{
+    display: grid;
+    grid-template-columns: repeat(4,minmax(200px, 1fr));
+    justify-content: center;
+    gap: 0px;
+  }
+}
+
+
+.purchases__list {
+  display: grid;
+  gap: 10px;
+  padding-bottom: 60px;
+}
+.purchases__text h2 {
+  text-align: start;
+  font-size: var(--quality-title);
+  padding-bottom: 70px;
+}
+.purchases__text h2 span {
+  color: var(--primary-color);
+}
+.purchases__item__inner {
+  padding: 5px;
+}
+.purchases__item {
+  background-color: var(--white-color);
+  box-shadow: 0 13.256px 19.884px 0 rgba(70, 70, 70, 0.1);
+  max-width: 225px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 15px;
 }
