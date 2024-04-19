@@ -32,16 +32,44 @@ const customersScroll = () => {
 window.addEventListener("scroll", customersScroll);
 customersScroll();
 
+
+
 const qualityScroll = () => {
   const section = document.querySelector(".quality__inner");
+  console.log(section);
   if (isElementInViewport(section)) {
+    
     section.classList.add("quality__animation");
     window.removeEventListener("scroll", qualityScroll);
   }
 };
-
 window.addEventListener("scroll", qualityScroll);
 qualityScroll();
+
+
+
+const restaurantScroll = () => {
+  const section = document.querySelector(".restaurants__inner");
+  if (isElementInViewport(section)) {
+    section.classList.add("restaurants__animation");
+    window.removeEventListener("scroll", restaurantScroll);
+  }
+};
+
+window.addEventListener("scroll", restaurantScroll);
+restaurantScroll();
+
+
+const dishScroll = () => {
+  const section = document.querySelector(".dishes__inner");
+  if (isElementInViewport(section)) {
+    section.classList.add("dishes__animation");
+    window.removeEventListener("scroll", restaurantScroll);
+  }
+};
+window.addEventListener("scroll", dishScroll);
+dishScroll();
+
 
 const restaurantsData = [
   {
@@ -205,13 +233,14 @@ const purchasesData = [
 
 const createPurchasesList =  purchasesData
   .map((purchas) => {
+    const timeClass = restaurant.status === "Cancelled" ? "cancelled" : "usuall";
     return `
       <li class="purchases__item">
       <img class="purchases__img"  src="${purchas.imgageUrl}" alt="image">
       <div class="purchases__item__inner">
       <h3 class="purchases__title">${purchas.title}</h3>
       <div class="purchases__wrapper">
-      <span class="purchases__time">${purchas.time}</span>
+      <span class=" ${timeClass}">${purchas.time}</span>
     </div>
     <span class="purchases__endtime">${purchas.endTime}</span>
       </div>
