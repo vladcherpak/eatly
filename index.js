@@ -233,7 +233,7 @@ const purchasesData = [
 
 const createPurchasesList =  purchasesData
   .map((purchas) => {
-    const timeClass = restaurant.status === "Cancelled" ? "cancelled" : "usuall";
+    const timeClass = purchas.status === "Cancelled" ? "cancelled" : "usuall";
     return `
       <li class="purchases__item">
       <img class="purchases__img"  src="${purchas.imgageUrl}" alt="image">
