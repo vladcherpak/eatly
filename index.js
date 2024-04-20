@@ -4,6 +4,7 @@ let list = document.querySelector(".header__list");
 let restaurantsList = document.querySelector(".restaurants__list");
 let dishesList = document.querySelector(".dishes__list");
 let purchasesList = document.querySelector(".purchases__list");
+let purchasesWindow = document.querySelector(".purchases__window");
 
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("active");
@@ -233,14 +234,14 @@ const purchasesData = [
 
 const createPurchasesList =  purchasesData
   .map((purchas) => {
-    const timeClass = purchas.status === "Cancelled" ? "cancelled" : "usuall";
+    const timeClass = purchas.time === "Cancelled" ? "cancelled" : "usuall";
     return `
       <li class="purchases__item">
       <img class="purchases__img"  src="${purchas.imgageUrl}" alt="image">
       <div class="purchases__item__inner">
       <h3 class="purchases__title">${purchas.title}</h3>
       <div class="purchases__wrapper">
-      <span class=" ${timeClass}">${purchas.time}</span>
+      <span class=" ${timeClass} purchases__time ">${purchas.time}</span>
     </div>
     <span class="purchases__endtime">${purchas.endTime}</span>
       </div>
@@ -250,3 +251,5 @@ const createPurchasesList =  purchasesData
 
   .join("");
   purchasesList.innerHTML = createPurchasesList;
+
+
