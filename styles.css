@@ -1148,9 +1148,13 @@ body {
 }
 
 .window__wrapper{
- display: flex;
- justify-content: space-around;
  padding-top: 20px;
+}
+
+.window__div{
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .purchases__btn{
@@ -1266,8 +1270,7 @@ body {
 }
 
 
-.discount{
-}
+
 
 .discount__inner{
   background-image:url(./img/discount-Subscribe.jpg) ;
@@ -1288,8 +1291,8 @@ body {
 }
 
 .discount__img{
-  max-width: 170px;
-  min-height: 170px;
+  width: 170px;
+  height: 170px;
   position: absolute;
   top: 200px;
   left:50%;
@@ -1321,4 +1324,33 @@ body {
 .discount__input input{
   border: none;
   width: 220px;
+}
+
+@media screen and (min-width: 768px) {
+  .discount__p{
+    font-size: 70px;
+    
+  }
+
+  .discount__input{
+    height: 67px;
+    max-width: 430px;
+  }
+  .discount__btn{
+    height: 50px;
+  }
+
+  .discount__img{
+    width: 270px;
+    height: 270px;
+    top: 60px;
+    left: 80%;
+ 
+  }
+
+  .discount__inner{
+    text-align: start;
+  }
+
+
 }
