@@ -1059,7 +1059,9 @@ body {
   }
 }
 
-
+.purchases{
+  padding-bottom: 100px;
+}
 .purchases__list {
   display: grid;
   gap: 10px;
@@ -1069,6 +1071,7 @@ body {
   text-align: start;
   font-size: var(--quality-title);
   padding-bottom: 70px;
+  text-align: center;
 }
 .purchases__text h2 span {
   color: var(--primary-color);
@@ -1110,6 +1113,7 @@ body {
 
 .purchases__list{
   position: relative;
+  padding-bottom: 120px;
 }
 
 .purchases__list::after {
@@ -1117,8 +1121,8 @@ body {
   position: absolute;
   top: 270px;
   right: 30px;
-  width: 160px;
-  height: 80px;
+  width: 140px;
+  height: 70px;
   transform: rotate(275deg);
   background-image: url(./img/icons/quality-btn-aftersvg.svg);
   background-size: contain;
@@ -1127,8 +1131,10 @@ body {
 
 .purchases__inner__2{
   box-shadow: 0 13.256px 19.884px 0 rgba(70, 70, 70, 0.1);
-  max-width: 250px;
-  width: 320px;
+  max-width: 320px;
+  border: 1px solid #EDF2F7;
+  border-radius: 15px;
+
 }
 .purchases__item__2{
   background-color: var(--white-color);
@@ -1136,7 +1142,183 @@ body {
   border-radius: 15px;
   overflow: hidden;
   padding: 10px 15px;
-  box-shadow: 0 13.256px 19.884px 0 rgba(70, 70, 70, 0.1);
   display: flex;
-  flex-wrap: wrap;align-items: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.window__wrapper{
+ display: flex;
+ justify-content: space-around;
+ padding-top: 20px;
+}
+
+.purchases__btn{
+  padding: 7px;
+  background-color: #FAFAFA;
+  border: none;
+  border-radius: 7px;
+  padding-right: 30px;
+  font-weight: 600;
+  position: relative;
+}
+
+.purchases__btn::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  width: 13px;
+  height: 6px;
+  background-image: url(./img/icons/pursharrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.window__wrapper h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.purchases__item__2{
+  border: 1px solid #EDF2F7;
+  border-radius: 15px;
+  max-width: 270px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.purchases__item__2 h3{
+  padding-right: 80px;
+}
+
+.purchases__item__2 span {
+  font-size: 10px;
+  color:  #A0AEC0;
+  padding-right: 70px;
+}
+
+.purchases__item__2 p {
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+.purchases__list__2{
+  padding: 20px;
+}
+
+.expense__img__div{
+  background-color:  #F4F0FF;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.expense__img{
+  padding-top: 7px;
+  padding-left: 7px;
+}
+
+.voucher__img__div{
+  background-color: #F2FDF6;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.voucher__img{
+  padding-top: 7px;
+  padding-left: 6px;
+}
+
+@media screen and (min-width: 468px) {
+  .purchases__list::after{
+    display: none;
+  }
+  .purchases__window{
+    display: grid;
+    justify-content: center;
+  }
+  .purchases__list{
+    justify-content: center;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .purchases .container{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .purchases__window{
+    max-height: 300px;
+    margin: auto 0;
+  }
+
+  .purchases__text{
+    max-width: 400px;
+  }
+
+}
+
+
+.discount{
+}
+
+.discount__inner{
+  background-image:url(./img/discount-Subscribe.jpg) ;
+  background-repeat: no-repeat;
+  height: 280px;
+  padding: 25px;
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.discount__p{
+  font-size: 40px;
+  font-weight: 800;
+  color:  #FFFFFF;
+  padding-bottom: 10px;
+}
+
+.discount__img{
+  max-width: 170px;
+  min-height: 170px;
+  position: absolute;
+  top: 200px;
+  left:50%;
+  transform:translate(-50%);
+}
+
+.discount__btn{
+  background-color:#6C5FBC;
+  border-radius: 10px;
+  color: var(--white-color);
+  border: none;
+  width:130px ;
+  height:40px ;
+}
+
+.discount__input{
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  padding: 0 7px;
+  max-width: 768px;
+  width: 100%;
+  left: 50%;
+}
+
+.discount__input input{
+  border: none;
+  width: 220px;
 }

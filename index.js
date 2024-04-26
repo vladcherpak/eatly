@@ -63,7 +63,7 @@ restaurantScroll();
 
 const dishScroll = () => {
   const section = document.querySelector(".dishes__inner");
-  if (isElementInViewport(section)) {
+  if  (isElementInViewport(section)) {
     section.classList.add("dishes__animation");
     window.removeEventListener("scroll", restaurantScroll);
   }
@@ -78,7 +78,7 @@ const restaurantsData = [
     imgageUrl: "./img/RestaurantImage3.jpg",
     title: "The Chicken King",
     deliveryTime: "24min •",
-    rating: 4.8,
+  rating: 4.8,
     status: "Healthy",
     saved: "./img/healthy-saved.svg",
   },
