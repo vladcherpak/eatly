@@ -4,7 +4,7 @@ let list = document.querySelector(".header__list");
 let restaurantsList = document.querySelector(".restaurants__list");
 let dishesList = document.querySelector(".dishes__list");
 let purchasesList = document.querySelector(".purchases__list");
-let purchasesWindow = document.querySelector(".purchases__window");
+let customersSay = document.querySelector(".customersay__list");
 
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("active");
@@ -253,3 +253,36 @@ const createPurchasesList =  purchasesData
   purchasesList.innerHTML = createPurchasesList;
 
 
+  const customersData = [
+    {
+      id: 1,
+      imgageUrl: "./img/customersa-haed.jpg",
+      title: "Alexander R.",
+      time:"01 Year With Us ",
+      imgageUrl2:"./img/icons/Pathcustomersay.svg",
+      stroke:"“ Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time ”",
+      star: "./img/icons/customersayStars.svg",
+    },
+
+  ];
+
+
+  const createCustomersayList =  customersData 
+  .map((custom) => {
+    return `
+      <li class="customersay__item">
+      <div class="customersay__wrapper">
+        <img class="customersay__img"  src="${custom.imgageUrl}" alt="image">
+        <div class="customersay__item__inner">
+          <h3 class="customersay__title">${custom.title}</h3>
+          <span class="customersay__p">${custom.time}</span>
+        </div>
+      </div>
+      <span class="customersay__stroke">${custom.stroke}</span>
+      <img class="customersay__star"   src="${custom.star}" alt="image">
+    </li>
+    `;
+  })
+
+  .join("");
+  customersSay.innerHTML = createCustomersayList;
