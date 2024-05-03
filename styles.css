@@ -1410,15 +1410,38 @@ body {
 
 }
 
-.customersay__list::after {
+.customersay__item::after {
   content: "";
   position: absolute;
   top: 22px;
   right: 80px;
   width: 25px;
   height: 35px;
-
   background-image: url(./img/icons/Pathcustomersay.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+
+.swiper__stroke{
+  color: var(--manatee-color);
+  font-size: var(--main-font);
+  text-align: justify;
+  font-family: Poppins;
+  font-style:italic ;
+
+}
+
+.swiper__item {
+  background-color: var(--white-color);
+  box-shadow: 0 13.256px 19.884px 0 rgba(70, 70, 70, 0.1);
+  max-width: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 25px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+

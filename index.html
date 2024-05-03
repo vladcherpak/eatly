@@ -14,6 +14,10 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <title>eatly</title>
   </head>
   <body>
@@ -222,14 +226,34 @@
         <div class="container">
           <div class="customersay__text">
             <h2><span>Customer</span> Say</h2>
-          </div>
-          <div class="customersay__inner">
             <ul class="customersay__list"></ul>
           </div>
         </div>
       </section>
+      <section class="swiper">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+<!-- 
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div> -->
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </section>
     </main>
     <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./index.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          hide: true,
+        },
+      });
+    </script>
   </body>
 </html>
+
+
