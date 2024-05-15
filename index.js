@@ -243,7 +243,8 @@ const createPurchasesList = purchasesData
   .join("");
 purchasesList.innerHTML = createPurchasesList;
 
-const customersData = [
+
+const swiperData = [
   {
     id: 1,
     imgageUrl: "./img/customersa-haed.jpg",
@@ -254,47 +255,46 @@ const customersData = [
       "“ Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time ”",
     star: "./img/icons/customersayStars.svg",
   },
-];
-
-const createCustomersayList = customersData
-  .map((custom) => {
-    return `
-      <li class="customersay__item">
-      <div class="customersay__wrapper">
-        <img class="customersay__img"  src="${custom.imgageUrl}" alt="image">
-        <div class="customersay__item__inner">
-          <h3 class="customersay__title">${custom.title}</h3>
-          <span class="customersay__p">${custom.time}</span>
-        </div>
-      </div>
-      <span class="customersay__stroke">${custom.stroke}</span>
-      <img class="customersay__star"   src="${custom.star}" alt="image">
-    </li>
-    `;
-  })
-
-  .join("");
-customersSay.innerHTML = createCustomersayList;
-
-const swiperData = [
-  {
-    id: 1,
-    stroke:
-      " Online nline invoice payment helps companies save time, are faster and save maximum effort for the clien ",
-    star: "./img/icons/customersayStars.svg",
-  },
 
   {
     id: 2,
+    imgageUrl: "./img/customersa-haed.jpg",
+    title: "Alexander R.",
+    time: "01 Year With Us ",
+    imgageUrl2: "./img/icons/Pathcustomersay.svg",
     stroke:
-      " Online nline invoice payment helps companies save time, are faster and save maximum effort for the clien ",
+      "“ Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time ”",
     star: "./img/icons/customersayStars.svg",
   },
 
   {
     id: 3,
+    imgageUrl: "./img/customersa-haed.jpg",
+    title: "Alexander R.",
+    time: "01 Year With Us ",
+    imgageUrl2: "./img/icons/Pathcustomersay.svg",
     stroke:
-      " Online nline invoice payment helps companies save time, are faster and save maximum effort for the clien ",
+      "“ Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time ”",
+    star: "./img/icons/customersayStars.svg",
+  },
+  {
+    id: 4,
+    imgageUrl: "./img/customersa-haed.jpg",
+    title: "Alexander R.",
+    time: "01 Year With Us ",
+    imgageUrl2: "./img/icons/Pathcustomersay.svg",
+    stroke:
+      "“ Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time ”",
+    star: "./img/icons/customersayStars.svg",
+  },
+  {
+    id: 5,
+    imgageUrl: "./img/customersa-haed.jpg",
+    title: "Alexander R.",
+    time: "01 Year With Us ",
+    imgageUrl2: "./img/icons/Pathcustomersay.svg",
+    stroke:
+      "“ Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time ”",
     star: "./img/icons/customersayStars.svg",
   },
 ];
@@ -304,6 +304,13 @@ const createSwiperList = swiperData
     return `
     <div class="swiper-slide">
       <div class="swiper__item">
+      <div class="customersay__wrapper">
+      <img class="swiper__img"  src="${swiper.imgageUrl}" alt="image">
+      <div class="swiper__item__inner">
+          <h3 class="swiper__title">${swiper.title}</h3>
+          <span class="swiper__p">${swiper.time}</span>
+        </div>
+        </div>
         <span class="swiper__stroke">${swiper.stroke}</span>
         <img class="swiper__star"   src="${swiper.star}" alt="image">
       </div>
@@ -312,4 +319,22 @@ const createSwiperList = swiperData
   })
 
   .join("");
-swiperWrapper.innerHTML  = createSwiperList
+swiperWrapper.innerHTML = createSwiperList;
+
+const newSwiper = new Swiper(".mySwiper", {
+  breakpoints: {
+    368: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1440: {
+      slidesPerView: 3,
+    },
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    hide: true,
+  },
+});
