@@ -676,7 +676,6 @@ body {
 .quality__text {
   opacity: 0;
 }
-
 .quality__animation .quality__wrapper {
   animation-name: qualityAnimWrapper;
   animation-duration: 1.5s;
@@ -686,40 +685,38 @@ body {
 .quality__animation .quality__text {
   animation-name: qualityAnim;
   animation-duration: 1.5s;
+  animation-fill-mode: forwards;
   opacity: 1;
 }
 
 @keyframes qualityAnim {
   0% {
-    opacity: 0;
-    transform: translateX(100vh);
+      opacity: 0;
+      transform: translateX(100vh);
   }
   50% {
-    opacity: 0.5;
+      opacity: 0.5;
   }
-
   99% {
-    opacity: 1;
-    transform: translateX(0vh);
+      opacity: 1;
+      transform: translateX(0);
   }
 }
 
 @keyframes qualityAnimWrapper {
   0% {
-    opacity: 0;
-    transform: translateX(0vh);
+      opacity: 0;
+      transform: translateX(0vh);
   }
   50% {
-    opacity: 0;
-    transform: translateX(-100vh);
+      opacity: 0;
+      transform: translateX(-100vh);
   }
-
   100% {
-    opacity: 1;
-    transform: translateX(0vh);
+      opacity: 1;
+      transform: translateX(0vh);
   }
 }
-
 @media screen and (min-width: 768px) {
   .quality__inner {
     display: flex;
@@ -1053,6 +1050,7 @@ body {
 
 .purchases {
   padding-bottom: 100px;
+  opacity: 0;
 }
 .purchases__list {
   display: grid;
@@ -1228,6 +1226,12 @@ body {
   padding-left: 6px;
 }
 
+.purchases__animation{
+  opacity: 1;
+  animation-duration: 1.5s;
+  animation-name: qualityAnim;
+}
+
 @media screen and (min-width: 468px) {
   .purchases__list::after {
     display: none;
@@ -1259,6 +1263,7 @@ body {
 
 .discount {
   margin-bottom: 100px;
+  opacity: 0;
 }
 
 .discount__inner {
@@ -1313,6 +1318,12 @@ body {
 .discount__input input {
   border: none;
   width: 220px;
+}
+
+.discount__animation{
+  opacity: 1;
+  animation-duration: 1.5s;
+  animation-name: qualityAnimWrapper;
 }
 
 @media screen and (min-width: 768px) {
@@ -1420,6 +1431,12 @@ body {
   background-image: url(./img/icons/Pathcustomersay.svg);
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.customersay__animation{
+  opacity: 1;
+  animation-duration: 1.5s;
+  animation-name: qualityAnim;
 }
 
 

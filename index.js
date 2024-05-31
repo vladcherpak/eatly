@@ -34,37 +34,6 @@ const customersScroll = () => {
 window.addEventListener("scroll", customersScroll);
 customersScroll();
 
-const qualityScroll = () => {
-  const section = document.querySelector(".quality__inner");
-  console.log(section);
-  if (isElementInViewport(section)) {
-    section.classList.add("quality__animation");
-    window.removeEventListener("scroll", qualityScroll);
-  }
-};
-window.addEventListener("scroll", qualityScroll);
-qualityScroll();
-
-const restaurantScroll = () => {
-  const section = document.querySelector(".restaurants__inner");
-  if (isElementInViewport(section)) {
-    section.classList.add("restaurants__animation");
-    window.removeEventListener("scroll", restaurantScroll);
-  }
-};
-
-window.addEventListener("scroll", restaurantScroll);
-restaurantScroll();
-
-const dishScroll = () => {
-  const section = document.querySelector(".dishes__inner");
-  if (isElementInViewport(section)) {
-    section.classList.add("dishes__animation");
-    window.removeEventListener("scroll", restaurantScroll);
-  }
-};
-window.addEventListener("scroll", dishScroll);
-dishScroll();
 
 const restaurantsData = [
   {
@@ -243,7 +212,6 @@ const createPurchasesList = purchasesData
   .join("");
 purchasesList.innerHTML = createPurchasesList;
 
-
 const swiperData = [
   {
     id: 1,
@@ -337,4 +305,107 @@ const newSwiper = new Swiper(".mySwiper", {
     el: ".swiper-scrollbar",
     hide: true,
   },
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const qualitySection = document.querySelector(".quality");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("quality__animation");
+          observer.unobserve(entry.target); // Зупиняємо спостереження після запуску анімації
+        }
+      });
+    },
+    { threshold: 0.1 }
+  ); // Налаштування, яке визначає, коли спрацьовує
+  observer.observe(qualitySection);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const restaurantSection = document.querySelector(".restaurants__inner");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("restaurants__animation");
+          observer.unobserve(entry.target); // Зупиняємо спостереження після запуску анімації
+        }
+      });
+    },
+    { threshold: 0.1 }
+  ); // Налаштування, яке визначає, коли спрацьовує
+  observer.observe(restaurantSection);
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const dishSection = document.querySelector(".dishes__inner");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("dishes__animation");
+          observer.unobserve(entry.target); // Зупиняємо спостереження після запуску анімації
+        }
+      });
+    },
+    { threshold: 0.1 }
+  ); // Налаштування, яке визначає, коли спрацьовує
+  observer.observe(dishSection);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const purchasesSection = document.querySelector(".purchases");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("purchases__animation");
+          observer.unobserve(entry.target); // Зупиняємо спостереження після запуску анімації
+        }
+      });
+    },
+    { threshold: 0.1 }
+  ); // Налаштування, яке визначає, коли спрацьовує
+  observer.observe(purchasesSection);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const discountSection = document.querySelector(".discount");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("discount__animation");
+          observer.unobserve(entry.target); // Зупиняємо спостереження після запуску анімації
+        }
+      });
+    },
+    { threshold: 0.1 }
+  ); // Налаштування, яке визначає, коли спрацьовує
+  observer.observe(discountSection);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const customersaySection = document.querySelector(".customersay");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("customersay__animation");
+          observer.unobserve(entry.target); // Зупиняємо спостереження після запуску анімації
+        }
+      });
+    },
+    { threshold: 0.1 }
+  ); // Налаштування, яке визначає, коли спрацьовує
+  observer.observe(customersaySection);
 });
